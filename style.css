@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #8ECDDD;
+}
+#game-over-image {
+    display: none; 
+    max-width: 100%;
+    margin-top: 20px; 
+}
+.container {
+    max-width: 406px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #FFFADD;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.emoji-container {
+    font-size: 48px;
+    margin: 20px 0;
+}
+
+#emoji {
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px; /* Add margin to create space below the input field */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+button {
+    margin-top: 10px; /* Add margin to create space above the button */
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#result {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.correct-answer {
+    animation: correct 1s ease-in-out;
+    color: green;
+}
+
+.wrong-answer {
+    animation: wrong 1s ease-in-out;
+    color: red;
+}
+
+@keyframes correct {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes wrong {
+    0% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px); /* Move the element 5 pixels to the left */
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px); /* Move the element 5 pixels to the right */
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+/* Styles for smaller screens (e.g., mobile devices) */
+@media (max-width: 368px) {
+    .container {
+        max-width: 368px; 
+        padding: 15px; 
+    }
+
+    h1 {
+        font-size: 20px; 
+    }
+
+    .emoji-container {
+        font-size: 28px; 
+        margin: 10px 0; 
+    }
+
+    input[type="text"] {
+        font-size: 14px; 
+        padding: 8px; 
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+    button {
+        font-size: 14px; 
+        margin-top: 8px; 
+        padding: 8px 16px; 
+    }
+
+    #game-over-image {
+        max-width: 100%; 
+    }
+}
+
+.chevron-up {
+    position: fixed;
+    bottom: 20px;
+    left: 20px; 
+    font-size: 24px;
+    color: #f0f2f5;
+    cursor: pointer;
+}
+
+.bottom-text {
+    font-size: 22px; 
+    margin-top: 200px; 
+    font-weight: bold;
+}
